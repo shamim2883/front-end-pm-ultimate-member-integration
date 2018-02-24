@@ -19,7 +19,7 @@ Front End PM extension to integrate with Ultimate Member. This works out of the 
 
 **Github**
 
-[https://github.com/shamim2883/front-end-pm/](https://github.com/shamim2883/front-end-pm/)
+[https://github.com/shamim2883/front-end-pm-ultimate-member-integration](https://github.com/shamim2883/front-end-pm-ultimate-member-integration)
 
 == Installation ==
 1. Upload "front-end-pm-um-integration" to the "/wp-content/plugins/" directory.
