@@ -14,6 +14,12 @@ Front End PM extension to integrate with Ultimate Member
 == Description ==
 Front End PM extension to integrate with Ultimate Member. This works out of the box, no settings required.
 
+[Front End PM](https://wordpress.org/plugins/front-end-pm/)
+[Ultimate Member – User Profile & Membership Plugin](https://wordpress.org/plugins/ultimate-member/)
+
+This two plugins need to be activated first before activating this extension.
+
+Once activated, you will see "Message" Tab in user profile and account page. If it is own profile then clicking "Message" will show full message system, if it is another user profile then clicking "Message" will show a form which will send message directly to that user.
 
 [More Details](https://www.shamimsplugins.com/docs/front-end-pm/integration/front-end-pm-ultimate-member-integration/?utm_campaign=wordpress&utm_source=readme&utm_medium=description)
 
@@ -22,13 +28,16 @@ Front End PM extension to integrate with Ultimate Member. This works out of the 
 [https://github.com/shamim2883/front-end-pm-ultimate-member-integration](https://github.com/shamim2883/front-end-pm-ultimate-member-integration)
 
 == Installation ==
-1. Upload "front-end-pm-um-integration" to the "/wp-content/plugins/" directory.
+1. Upload "front-end-pm-ultimate-member-integration" to the "/wp-content/plugins/" directory.
 1. Activate the plugin through the "Plugins" menu in WordPress.
 
 
 == Frequently Asked Questions ==
-= Can i use this plugin to my language? =
+= Can i use this plugin in my language? =
 Yes. this plugin is translate ready.
+
+= Message tab is not showing in UM profile page =
+Please go to Daashboard > Ultimate Member > Settings > Appearance > Profile Menu, unchecked Message Tab, Then click Save Changes, Again checked Message Tab, Then again click Save Changes.
 
 == Screenshots ==
 

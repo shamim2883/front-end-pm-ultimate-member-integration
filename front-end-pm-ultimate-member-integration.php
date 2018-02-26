@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Front End PM - Ultimate Member Integration
-Plugin URI: https://www.shamimsplugins.com/contact-us/
+Plugin URI: https://wordpress.org/plugins/front-end-pm-ultimate-member-integration/
 Description: Front End PM extension to integrate with Ultimate Member
 Version: 1.1
 Author: Shamim
@@ -60,10 +60,10 @@ class Front_End_Pm_UM_Integration {
 	private function actions()
     	{
 				if( is_user_logged_in() ){
-					add_action('um_profile_content_fep_um_message_tab_default', array( $this, 'content' ) );
+					add_action('um_profile_content_fep-um_default', array( $this, 'content' ) );
 
 					//Account page
-					add_action('um_account_tab__fep_um_message_tab', array( $this, 'account_tab_hook' ) );
+					add_action('um_account_tab__fep-um', array( $this, 'account_tab_hook' ) );
 				}
     	}
 
@@ -75,7 +75,7 @@ class Front_End_Pm_UM_Integration {
 
 					//Account page
 					add_filter('um_account_page_default_tabs_hook', array( $this, 'account_tab' ), 100 );
-					add_filter('um_account_content_hook_fep_um_message_tab', array( $this, 'account_content' ) );
+					add_filter('um_account_content_hook_fep-um', array( $this, 'account_content' ) );
 				}
     	}
 
@@ -92,13 +92,13 @@ class Front_End_Pm_UM_Integration {
 	}
 
 	function url( $url, $args ){
-		$args['profiletab'] = 'fep_um_message_tab';
+		$args['profiletab'] = 'fep-um';
 		return add_query_arg( $args, um_user_profile_url());
 	}
 
 	function tab( $tabs ) {
 
-		$tabs['fep_um_message_tab'] = array(
+		$tabs['fep-um'] = array(
 			'name' => __('Message', 'front-end-pm-ultimate-member-integration'),
 			'icon' => 'um-icon-email',
 		);
@@ -109,9 +109,9 @@ class Front_End_Pm_UM_Integration {
 
 	//Account page
 	function account_tab( $tabs ) {
-			$tabs[800]['fep_um_message_tab']['icon'] = 'um-icon-email';
-			$tabs[800]['fep_um_message_tab']['title'] = __('Message', 'front-end-pm-ultimate-member-integration');
-			$tabs[800]['fep_um_message_tab']['custom'] = true;
+			$tabs[800]['fep-um']['icon'] = 'um-icon-email';
+			$tabs[800]['fep-um']['title'] = __('Message', 'front-end-pm-ultimate-member-integration');
+			$tabs[800]['fep-um']['custom'] = true;
 			return $tabs;
 	}
 
@@ -119,7 +119,7 @@ class Front_End_Pm_UM_Integration {
 			global $ultimatemember;
 			extract( $info );
 
-			$output = $ultimatemember->account->get_tab_output('fep_um_message_tab');
+			$output = $ultimatemember->account->get_tab_output('fep-um');
 			if ( $output ) {
 				echo '<div class="um-account-heading uimob340-hide uimob500-hide"><i class="'. $icon .'"></i>' .$title.'</div>';
 				echo $output;
@@ -129,14 +129,14 @@ class Front_End_Pm_UM_Integration {
 	function account_content( $output ){
 
 			$output = '<div class="um-field">';
-			$output .= '<a class="um-button" href="' . esc_url( add_query_arg( 'profiletab', 'fep_um_message_tab', um_user_profile_url()) ) .'">' . __('Message', 'front-end-pm-ultimate-member-integration') . '</a>';
+			$output .= '<a class="um-button" href="' . esc_url( add_query_arg( 'profiletab', 'fep-um', um_user_profile_url()) ) .'">' . __('Message', 'front-end-pm-ultimate-member-integration') . '</a>';
 			$output .= '</div>';
 
 			return $output;
 	}
 
 	public function notices() {
-		echo '<div class="error"><p>'. __( 'Front End PM and Ultimate Member must be activated to use Front End PM UM Integration extension.', 'front-end-pm-ultimate-member-integration' ). '</p></div>';
+		echo '<div class="error"><p>'. __( 'Front End PM and Ultimate Member must be activated to use Front End PM - Ultimate Member Integration.', 'front-end-pm-ultimate-member-integration' ). '</p></div>';
 	}
 
 } //END Class
