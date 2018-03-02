@@ -3,7 +3,7 @@
 Plugin Name: Front End PM - Ultimate Member Integration
 Plugin URI: https://wordpress.org/plugins/front-end-pm-ultimate-member-integration/
 Description: Front End PM extension to integrate with Ultimate Member
-Version: 1.1
+Version: 1.2
 Author: Shamim
 Author URI: https://www.shamimsplugins.com/contact-us/
 Text Domain: front-end-pm-ultimate-member-integration
