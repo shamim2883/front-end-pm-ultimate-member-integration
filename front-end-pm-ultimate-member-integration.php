@@ -93,6 +93,8 @@ class Front_End_Pm_UM_Integration {
 
 	function url( $url, $args ){
 		$args['profiletab'] = 'fep-um';
+		um_fetch_user( get_current_user_id() );
+		
 		return add_query_arg( $args, um_user_profile_url());
 	}
 
