@@ -77,6 +77,8 @@ class Front_End_Pm_UM_Integration {
 					add_filter('um_account_page_default_tabs_hook', array( $this, 'account_tab' ), 100 );
 					add_filter('um_account_content_hook_fep-um', array( $this, 'account_content' ) );
 				}
+			//PRO version message_url and announcement_url change in email
+			add_filter( 'fep_eb_email_legends', array( $this, 'email_legends' ), 10, 3 );
     	}
 
 	function content( $args ) {
@@ -96,6 +98,18 @@ class Front_End_Pm_UM_Integration {
 		um_fetch_user( get_current_user_id() );
 		
 		return add_query_arg( $args, um_user_profile_url());
+	}
+	
+	function email_legends( $legends, $post, $user_email ){
+		if( is_object( $post ) ){
+			um_fetch_user( fep_get_userdata( $user_email, 'ID', 'email') );
+			
+			$legends['message_url']['replace_with'] = ! empty( $post->ID ) ? esc_url_raw( add_query_arg( array( 'profiletab' => 'fep-um', 'fepaction' => 'viewmessage', 'fep_id' => $post->ID ), um_user_profile_url() ) ) : '';
+			
+			$legends['announcement_url']['replace_with'] = ! empty( $post->ID ) ? esc_url_raw( add_query_arg( array( 'profiletab' => 'fep-um', 'fepaction' => 'view_announcement', 'fep_id' => $post->ID ), um_user_profile_url() ) ) : '';
+		}
+		
+		return $legends;
 	}
 
 	function tab( $tabs ) {
