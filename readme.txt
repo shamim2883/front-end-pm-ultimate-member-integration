@@ -5,7 +5,7 @@ Donate link: https://www.shamimsplugins.com/products/front-end-pm-pro/?utm_campa
 Requires at least: 4.4
 Tested up to: 4.9.4
 Requires PHP: 5.4
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,10 @@ Please go to Daashboard > Ultimate Member > Settings > Appearance > Profile Menu
 3. Account
 
 == Changelog ==
+
+= 1.3 =
+
+* FIX: Wrong message url in PRO version email.
 
 = 1.2 =
 
